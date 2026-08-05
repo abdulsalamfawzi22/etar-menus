@@ -7,13 +7,14 @@
     "taglineEn": "Shisha · Juices · Coffee · Desserts",
     "initial": "OOF",
     "theme": "dark",
-    "color": "#d4af37",
-    "color2": "#7a4f24",
+    "color": "#34d399",
+    "color2": "#064e3b",
     "hoursAr": "٤ عصراً – ٢ فجراً",
     "hoursEn": "4 PM – 2 AM",
     "currencyAr": "ر.س",
     "currencyEn": "SAR",
-    "whatsapp": "966508773099"
+    "whatsapp": "966508773099",
+    "onBrand": "#04231a"
   },
   "draft": true,
   "categories": [

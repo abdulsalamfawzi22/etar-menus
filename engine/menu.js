@@ -70,6 +70,7 @@
     root.setAttribute("data-theme", b.theme === "dark" ? "dark" : "light");
     root.style.setProperty("--brand", b.color || "#c9a227");
     root.style.setProperty("--brand-2", b.color2 || "#8a5a2b");
+    root.style.setProperty("--on-brand", b.onBrand || "#14100a");
 
     var name = lang === "ar" ? b.ar : b.en;
     document.title = name + (lang === "ar" ? " | المنيو" : " | Menu");

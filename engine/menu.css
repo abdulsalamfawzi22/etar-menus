@@ -7,6 +7,10 @@
   --brand:   #d4af37;
   --brand-2: #7a4f24;
   --brand-soft: color-mix(in srgb, var(--brand) 16%, transparent);
+  --brand-lite: color-mix(in srgb, var(--brand) 55%, #fff);   /* أفتح درجة */
+  --brand-deep: color-mix(in srgb, var(--brand) 80%, #000);   /* أغمق درجة */
+  --on-brand:   #14100a;                                      /* لون النص فوق لون العلامة */
+  --grad: linear-gradient(140deg, var(--brand-lite), var(--brand) 58%, var(--brand-deep));
 
   --r:    18px;
   --r-lg: 26px;
@@ -95,23 +99,27 @@ button { font: inherit; cursor: pointer; }
   background:
     radial-gradient(80% 120% at 50% 100%, color-mix(in srgb, var(--brand) 30%, transparent) 0%, transparent 60%),
     radial-gradient(60% 90% at 15% 0%, color-mix(in srgb, var(--brand-2) 65%, transparent) 0%, transparent 65%),
-    linear-gradient(160deg, #241708 0%, #0d0906 100%);
+    linear-gradient(160deg, color-mix(in srgb, var(--brand-2) 70%, #000) 0%, var(--bg) 100%);
 }
 [data-theme="light"] .m-cover {
   background:
     radial-gradient(80% 120% at 50% 100%, color-mix(in srgb, var(--brand) 45%, transparent) 0%, transparent 60%),
     radial-gradient(60% 90% at 15% 0%, color-mix(in srgb, var(--brand-2) 80%, transparent) 0%, transparent 65%),
-    linear-gradient(160deg, #3a2410 0%, #1c1108 100%);
+    linear-gradient(160deg, color-mix(in srgb, var(--brand-2) 88%, #000) 0%, color-mix(in srgb, var(--brand-2) 55%, #000) 100%);
 }
 
 /* زخرفة نجمية عربية خفيفة */
 .m-cover::before {
   content: ""; position: absolute; inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23d4af37' stroke-opacity='.22' stroke-width='1'%3E%3Cpath d='M32 6 41 23 58 32 41 41 32 58 23 41 6 32 23 23Z'/%3E%3Ccircle cx='32' cy='32' r='9'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: 64px 64px;
-  mask-image: linear-gradient(to bottom, #000 0%, transparent 85%);
-  -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 85%);
-  opacity: .55;
+  background: var(--brand);
+  --star: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23000' stroke-width='1.2'%3E%3Cpath d='M32 6 41 23 58 32 41 41 32 58 23 41 6 32 23 23Z'/%3E%3Ccircle cx='32' cy='32' r='9'/%3E%3C/g%3E%3C/svg%3E");
+  mask-image: var(--star), linear-gradient(to bottom, #000 0%, transparent 85%);
+  mask-composite: intersect;
+  -webkit-mask-image: var(--star), linear-gradient(to bottom, #000 0%, transparent 85%);
+  -webkit-mask-composite: source-in;
+  mask-size: 64px 64px, cover;
+  -webkit-mask-size: 64px 64px, cover;
+  opacity: .3;
 }
 
 /* خط ذهبي رفيع أسفل الغلاف */
@@ -144,7 +152,7 @@ button { font: inherit; cursor: pointer; }
 .m-logo span {
   font-family: "Reem Kufi", sans-serif;
   font-size: 1.28rem; font-weight: 700; letter-spacing: 1.5px;
-  background: linear-gradient(140deg, #f3dc94, var(--brand) 55%, #b8892a);
+  background: var(--grad);
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -216,8 +224,8 @@ button { font: inherit; cursor: pointer; }
 }
 .m-tab:hover { color: var(--brand); border-color: var(--brand-soft); }
 .m-tab.active {
-  color: #14100a;
-  background: linear-gradient(135deg, #f0d68a, var(--brand) 60%, #c69a2c);
+  color: var(--on-brand);
+  background: var(--grad);
   box-shadow: 0 6px 18px color-mix(in srgb, var(--brand) 30%, transparent);
   border-color: transparent;
 }
@@ -294,7 +302,7 @@ button { font: inherit; cursor: pointer; }
 }
 .m-price b {
   font-size: 1.24rem; font-weight: 800; line-height: 1;
-  background: linear-gradient(140deg, #f3dc94, var(--brand) 60%, #c69a2c);
+  background: var(--grad);
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -311,7 +319,7 @@ button { font: inherit; cursor: pointer; }
    ========================================================================== */
 .m-cta {
   position: fixed; inset-inline: 0; bottom: 0; z-index: 30;
-  background: linear-gradient(120deg, #150e07, var(--brand-2) 145%);
+  background: linear-gradient(120deg, color-mix(in srgb, var(--brand-2) 45%, #000), var(--brand-2) 150%);
   border-top: 1px solid var(--brand-soft);
   color: #fff;
   padding: 13px 20px calc(13px + env(safe-area-inset-bottom));
@@ -325,8 +333,8 @@ button { font: inherit; cursor: pointer; }
 
 .m-cta-btn {
   flex: none;
-  background: linear-gradient(135deg, #f0d68a, var(--brand) 60%, #c69a2c);
-  color: #14100a; font-weight: 800; font-size: .89rem;
+  background: var(--grad);
+  color: var(--on-brand); font-weight: 800; font-size: .89rem;
   padding: 12px 26px; border-radius: 999px;
   box-shadow: 0 6px 20px rgba(0,0,0,.35);
   transition: transform .22s var(--ease), box-shadow .22s;
