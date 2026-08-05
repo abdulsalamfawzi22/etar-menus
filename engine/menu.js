@@ -7,7 +7,7 @@
 
   var UI = {
     ar: {
-      draft: "نموذج مبدئي للعرض — الأصناف والأسعار مؤقتة وتُستبدل بقائمتكم الحقيقية",
+      draft: "نموذج للعرض — الأقسام والأصناف والأسعار مجرد مثال، ويُبنى بأقسامكم وقائمتكم الحقيقية",
       draftBy: "من تنفيذ إطار",
       langBtn: "English",
       open: "مفتوح الآن",
@@ -21,7 +21,7 @@
       waMsg: "السلام عليكم، شفت المنيو وأبغى أستفسر."
     },
     en: {
-      draft: "Preview draft — items and prices are placeholders and will be replaced with your real menu",
+      draft: "Preview — categories, items and prices are just an example; it is built with your own menu",
       draftBy: "Built by Etar",
       langBtn: "العربية",
       open: "Open now",
