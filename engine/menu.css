@@ -23,16 +23,18 @@
 /* ---------- السمة الفاتحة ---------- */
 :root,
 [data-theme="light"] {
-  --bg:      #faf7f2;
-  --bg-2:    #f2ece2;
+  --bg:      #ffffff;
+  --bg-2:    #f6f8f8;
   --surface: #ffffff;
-  --ink:     #1a1410;
-  --ink-2:   #4a3f36;
-  --muted:   #8a7c6d;
-  --line:    #e7ded0;
-  --hair:    rgba(0,0,0,.09);
-  --shadow:  0 8px 24px rgba(60,40,20,.08), 0 24px 60px rgba(60,40,20,.06);
+  --ink:     #10201c;
+  --ink-2:   #3e4c48;
+  --muted:   #6c7a76;
+  --line:    #e8eeec;
+  --hair:    rgba(16,32,28,.08);
+  --shadow:  0 2px 8px rgba(16,40,34,.05), 0 16px 40px rgba(16,40,34,.06);
 }
+
+[data-theme="light"] { --grad: linear-gradient(140deg, var(--brand), var(--brand-deep)); }
 
 /* ---------- السمة الداكنة ---------- */
 [data-theme="dark"] {
@@ -90,12 +92,18 @@ button { font: inherit; cursor: pointer; }
 }
 .draft-bar b { color: #fff; font-weight: 700; }
 
+[data-theme="light"] .draft-bar {
+  background: #fff4f4; color: #8f2626;
+  border-bottom: 1px solid #f7d9d9;
+}
+[data-theme="light"] .draft-bar b { color: #6d1b1b; }
+
 /* ==========================================================================
    الغلاف والرأس
    ========================================================================== */
 .m-cover {
   position: relative;
-  height: 210px;
+  height: 190px;
   background:
     radial-gradient(80% 120% at 50% 100%, color-mix(in srgb, var(--brand) 30%, transparent) 0%, transparent 60%),
     radial-gradient(60% 90% at 15% 0%, color-mix(in srgb, var(--brand-2) 65%, transparent) 0%, transparent 65%),
@@ -103,10 +111,11 @@ button { font: inherit; cursor: pointer; }
 }
 [data-theme="light"] .m-cover {
   background:
-    radial-gradient(80% 120% at 50% 100%, color-mix(in srgb, var(--brand) 45%, transparent) 0%, transparent 60%),
-    radial-gradient(60% 90% at 15% 0%, color-mix(in srgb, var(--brand-2) 80%, transparent) 0%, transparent 65%),
-    linear-gradient(160deg, color-mix(in srgb, var(--brand-2) 88%, #000) 0%, color-mix(in srgb, var(--brand-2) 55%, #000) 100%);
+    radial-gradient(70% 100% at 82% 8%, color-mix(in srgb, var(--brand) 22%, #fff) 0%, transparent 62%),
+    linear-gradient(165deg, var(--brand-2) 0%, color-mix(in srgb, var(--brand-2) 35%, #fff) 55%, #fff 100%);
 }
+[data-theme="light"] .m-cover::before { opacity: .26; }
+[data-theme="light"] .m-cover::after { opacity: .35; }
 
 /* زخرفة نجمية عربية خفيفة */
 .m-cover::before {
@@ -149,6 +158,7 @@ button { font: inherit; cursor: pointer; }
   border: 1.5px solid var(--brand);
   opacity: .85;
 }
+[data-theme="light"] .m-logo { box-shadow: 0 6px 20px rgba(16,40,34,.1), 0 0 0 1px var(--line); }
 .m-logo span {
   font-family: "Reem Kufi", sans-serif;
   font-size: 1.28rem; font-weight: 700; letter-spacing: 1.5px;
@@ -253,6 +263,7 @@ button { font: inherit; cursor: pointer; }
   padding: 6px 20px;
   box-shadow: var(--shadow);
 }
+[data-theme="light"] .m-panel { background: #fff; }
 
 .m-item {
   display: flex; align-items: center; gap: 14px;
@@ -330,6 +341,14 @@ button { font: inherit; cursor: pointer; }
 .m-cta-txt { display: flex; flex-direction: column; line-height: 1.45; }
 .m-cta-txt b { font-size: .94rem; }
 .m-cta-txt span { font-size: .78rem; color: rgba(255,255,255,.72); }
+
+[data-theme="light"] .m-cta {
+  background: #fff;
+  border-top: 1px solid var(--line);
+  box-shadow: 0 -6px 26px rgba(16,40,34,.08);
+  color: var(--ink);
+}
+[data-theme="light"] .m-cta-txt span { color: var(--muted); }
 
 .m-cta-btn {
   flex: none;

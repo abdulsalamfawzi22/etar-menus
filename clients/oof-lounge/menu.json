@@ -3,81 +3,34 @@
   "brand": {
     "ar": "اووف لاونج",
     "en": "OOF Lounge",
-    "taglineAr": "شيشة · عصيرات · قهاوي · حلا",
-    "taglineEn": "Shisha · Juices · Coffee · Desserts",
+    "taglineAr": "عصيرات طبيعية · مشروبات · حلا",
+    "taglineEn": "Fresh Juices · Drinks · Desserts",
     "initial": "OOF",
-    "theme": "dark",
-    "color": "#34d399",
-    "color2": "#064e3b",
+    "theme": "light",
+    "color": "#047857",
+    "color2": "#a7f3d0",
+    "onBrand": "#ffffff",
     "hoursAr": "٤ عصراً – ٢ فجراً",
     "hoursEn": "4 PM – 2 AM",
     "currencyAr": "ر.س",
     "currencyEn": "SAR",
-    "whatsapp": "966508773099",
-    "onBrand": "#04231a"
+    "whatsapp": "966508773099"
   },
   "draft": true,
   "categories": [
     {
-      "id": "shisha",
-      "ar": "شيشة",
-      "en": "Shisha",
-      "icon": "💨",
-      "items": [
-        {
-          "ar": "معسل عادي",
-          "en": "Classic Shisha",
-          "price": 55,
-          "tag": "best",
-          "descAr": "تفاحتين · عنب نعناع · ليمون نعناع · مستكة",
-          "descEn": "Double apple · Grape mint · Lemon mint · Mastic"
-        },
-        {
-          "ar": "معسل مميز",
-          "en": "Premium Shisha",
-          "price": 70,
-          "descAr": "بلو بيري · باشن فروت · ميكس اللاونج",
-          "descEn": "Blueberry · Passion fruit · Lounge mix"
-        },
-        {
-          "ar": "رأس تفاح",
-          "en": "Apple Head",
-          "price": 80,
-          "descAr": "معسل داخل تفاحة طازجة",
-          "descEn": "Served inside a fresh apple"
-        },
-        {
-          "ar": "رأس أناناس",
-          "en": "Pineapple Head",
-          "price": 90,
-          "tag": "new",
-          "descAr": "معسل داخل أناناس طازج",
-          "descEn": "Served inside a fresh pineapple"
-        },
-        {
-          "ar": "تغيير رأس",
-          "en": "Head Refill",
-          "price": 30
-        },
-        {
-          "ar": "فحم إضافي",
-          "en": "Extra Coal",
-          "price": 10
-        }
-      ]
-    },
-    {
       "id": "juices",
-      "ar": "عصيرات",
-      "en": "Juices",
-      "icon": "🍹",
+      "ar": "عصيرات طبيعية",
+      "en": "Fresh Juices",
+      "icon": "🍊",
       "items": [
         {
           "ar": "عصير طازج",
           "en": "Fresh Juice",
           "price": 26,
-          "descAr": "ليمون نعناع · برتقال · بطيخ · فراولة · مانجو · رمان · أفوكادو",
-          "descEn": "Lemon mint · Orange · Watermelon · Strawberry · Mango · Pomegranate · Avocado"
+          "tag": "best",
+          "descAr": "برتقال · ليمون نعناع · بطيخ · فراولة · مانجو · رمان · جوافة",
+          "descEn": "Orange · Lemon mint · Watermelon · Strawberry · Mango · Pomegranate · Guava"
         },
         {
           "ar": "كوكتيل فواكه",
@@ -87,33 +40,23 @@
           "descEn": "Cuba · Lemon kiwi · Vitamin C · Piña colada"
         },
         {
-          "ar": "موهيتو",
-          "en": "Mojito",
-          "price": 27,
-          "tag": "best",
-          "descAr": "ليمون نعناع · برتقال · رمان · توت أزرق · باشن فروت",
-          "descEn": "Lemon mint · Orange · Pomegranate · Blueberry · Passion fruit"
+          "ar": "أفوكادو بالحليب",
+          "en": "Avocado with Milk",
+          "price": 28,
+          "descAr": "مع العسل والمكسرات",
+          "descEn": "With honey and nuts"
         },
         {
-          "ar": "ميلك شيك",
-          "en": "Milkshake",
-          "price": 30,
-          "descAr": "فراولة · أوريو · لوتس · شوكولاتة · فانيلا",
-          "descEn": "Strawberry · Oreo · Lotus · Chocolate · Vanilla"
-        },
-        {
-          "ar": "آيس تي",
-          "en": "Ice Tea",
-          "price": 25,
-          "descAr": "خوخ · فراولة · ليمون · بطيخ",
-          "descEn": "Peach · Strawberry · Lemon · Watermelon"
+          "ar": "ليمون بالنعناع",
+          "en": "Mint Lemonade",
+          "price": 24
         }
       ]
     },
     {
-      "id": "coffee",
-      "ar": "قهاوي",
-      "en": "Coffee",
+      "id": "hot",
+      "ar": "مشروبات ساخنة",
+      "en": "Hot Drinks",
       "icon": "☕",
       "items": [
         {
@@ -186,6 +129,47 @@
       ]
     },
     {
+      "id": "cold",
+      "ar": "مشروبات باردة",
+      "en": "Cold Drinks",
+      "icon": "🧊",
+      "items": [
+        {
+          "ar": "موهيتو",
+          "en": "Mojito",
+          "price": 27,
+          "tag": "best",
+          "descAr": "ليمون نعناع · برتقال · رمان · توت أزرق · باشن فروت",
+          "descEn": "Lemon mint · Orange · Pomegranate · Blueberry · Passion fruit"
+        },
+        {
+          "ar": "ميلك شيك",
+          "en": "Milkshake",
+          "price": 30,
+          "descAr": "فراولة · أوريو · لوتس · شوكولاتة · فانيلا",
+          "descEn": "Strawberry · Oreo · Lotus · Chocolate · Vanilla"
+        },
+        {
+          "ar": "آيس اسبانيش لاتيه",
+          "en": "Iced Spanish Latte",
+          "price": 27,
+          "tag": "new"
+        },
+        {
+          "ar": "آيس لاتيه · آيس أمريكانو",
+          "en": "Iced Latte · Iced Americano",
+          "price": 25
+        },
+        {
+          "ar": "آيس تي",
+          "en": "Ice Tea",
+          "price": 25,
+          "descAr": "خوخ · فراولة · ليمون · بطيخ",
+          "descEn": "Peach · Strawberry · Lemon · Watermelon"
+        }
+      ]
+    },
+    {
       "id": "sweets",
       "ar": "حلا",
       "en": "Desserts",
@@ -204,14 +188,14 @@
           "tag": "new"
         },
         {
-          "ar": "براوني بالشوكولاتة",
-          "en": "Chocolate Brownie",
-          "price": 28
-        },
-        {
           "ar": "تشيز كيك فراولة",
           "en": "Strawberry Cheesecake",
           "price": 30
+        },
+        {
+          "ar": "براوني بالشوكولاتة",
+          "en": "Chocolate Brownie",
+          "price": 28
         },
         {
           "ar": "كوكيز",
