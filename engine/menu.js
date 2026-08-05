@@ -43,6 +43,16 @@
   function u(k) { return UI[lang][k]; }
   function pick(obj, key) { return lang === "ar" ? obj[key + "Ar"] || obj.ar : obj[key + "En"] || obj.en; }
 
+  /* فاصل زخرفي: خط — معيّن — خط */
+  function ornament() {
+    var o = el("div", "ornament");
+    o.setAttribute("aria-hidden", "true");
+    o.appendChild(el("i"));
+    o.appendChild(el("b"));
+    o.appendChild(el("i"));
+    return o;
+  }
+
   function el(tag, cls, text) {
     var e = document.createElement(tag);
     if (cls) e.className = cls;
@@ -82,9 +92,14 @@
     app.appendChild(cover);
 
     var head = el("header", "m-head");
-    head.appendChild(el("div", "m-logo", b.initial || name.slice(0, 3)));
+    var logo = el("div", "m-logo");
+    logo.setAttribute("aria-hidden", "true");
+    logo.appendChild(el("span", null, b.initial || name.slice(0, 3)));
+    head.appendChild(logo);
+
     head.appendChild(el("h1", null, name));
     head.appendChild(el("p", "m-tagline", pick(b, "tagline")));
+    head.appendChild(ornament());
 
     var meta = el("div", "m-meta");
     var openSpan = el("span");
@@ -119,24 +134,26 @@
       var sec = el("section", "m-cat");
       sec.id = c.id;
 
-      var h2 = el("h2");
+      var head2 = el("div", "cat-head");
       if (c.icon) {
         var ic = el("span", "cat-icon", c.icon);
         ic.setAttribute("aria-hidden", "true");
-        h2.appendChild(ic);
+        head2.appendChild(ic);
       }
-      h2.appendChild(el("span", null, lang === "ar" ? c.ar : c.en));
-      sec.appendChild(h2);
+      head2.appendChild(el("h2", null, lang === "ar" ? c.ar : c.en));
+      head2.appendChild(ornament());
+      sec.appendChild(head2);
 
-      var list = el("div", "m-items");
-      c.items.forEach(function (it) {
-        list.appendChild(buildItem(it, c));
-      });
-      sec.appendChild(list);
+      var panel = el("div", "m-panel");
+      c.items.forEach(function (it) { panel.appendChild(buildItem(it, c)); });
+      sec.appendChild(panel);
       main.appendChild(sec);
     });
 
-    main.appendChild(el("p", "m-note", u("note")));
+    var note = el("div", "m-note");
+    note.appendChild(ornament());
+    note.appendChild(el("p", null, u("note")));
+    main.appendChild(note);
     app.appendChild(main);
 
     /* الشريط السفلي */
@@ -157,35 +174,59 @@
     }
 
     initTabs();
+    initReveal();
+  }
+
+  /* ظهور الأقسام عند التمرير */
+  function initReveal() {
+    var cats = document.querySelectorAll(".m-cat");
+    if (!("IntersectionObserver" in window)) {
+      cats.forEach(function (c) { c.classList.add("in"); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        en.target.classList.add("in");
+        io.unobserve(en.target);
+      });
+    }, { threshold: 0.06, rootMargin: "0px 0px -30px 0px" });
+    cats.forEach(function (c) { io.observe(c); });
   }
 
   function buildItem(it, cat) {
     var art = el("article", "m-item");
 
-    var thumb = el("div", "m-thumb");
-    thumb.setAttribute("aria-hidden", "true");
+    // الصورة تُعرض فقط إن وُجدت فعلاً. بديلها ليس إيموجي مكرراً —
+    // المنيو النصّي بالخط المنقّط أنظف وأفخم.
     if (it.img) {
+      var thumb = el("div", "m-thumb");
+      thumb.setAttribute("aria-hidden", "true");
       var im = el("img");
       im.src = "img/" + it.img;
       im.alt = "";
       im.loading = "lazy";
       im.decoding = "async";
       thumb.appendChild(im);
+      art.appendChild(thumb);
     } else {
-      thumb.textContent = it.icon || cat.icon || "•";
+      art.classList.add("no-img");
     }
-    art.appendChild(thumb);
 
     var body = el("div", "m-body");
-    var h3 = el("h3");
+    var h3 = el("h3", "m-name");
     h3.appendChild(el("span", null, lang === "ar" ? it.ar : it.en));
     if (it.tag === "best") h3.appendChild(el("span", "tag tag-best", u("best")));
     if (it.tag === "new")  h3.appendChild(el("span", "tag tag-new", u("new")));
     body.appendChild(h3);
 
     var desc = pick(it, "desc");
-    if (desc && desc !== it.ar && desc !== it.en) body.appendChild(el("p", null, desc));
+    if (desc && desc !== it.ar && desc !== it.en) body.appendChild(el("p", "m-desc", desc));
     art.appendChild(body);
+
+    var lead = el("span", "leader");
+    lead.setAttribute("aria-hidden", "true");
+    art.appendChild(lead);
 
     var price = el("div", "m-price");
     price.appendChild(el("b", null, String(it.price)));
