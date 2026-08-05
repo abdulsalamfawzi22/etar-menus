@@ -1,0 +1,116 @@
+{
+  "_ملاحظة": "هذا الملف الوحيد الذي تعدّله لكل عميل. لتغيير سعر: عدّل الرقم. لإضافة صنف: انسخ سطراً.",
+
+  "brand": {
+    "ar": "اووف لاونج",
+    "en": "OOF Lounge",
+    "taglineAr": "قهوة · عصائر · شيشة · حلا",
+    "taglineEn": "Coffee · Juices · Shisha · Desserts",
+    "initial": "OOF",
+    "theme": "dark",
+    "color": "#c9a227",
+    "color2": "#8a5a2b",
+    "hoursAr": "٤ عصراً – ٢ فجراً",
+    "hoursEn": "4 PM – 2 AM",
+    "currencyAr": "ر.س",
+    "currencyEn": "SAR",
+    "whatsapp": "966508773099"
+  },
+
+  "draft": true,
+
+  "categories": [
+    {
+      "id": "coffee",
+      "ar": "قهاوي ومشروبات ساخنة",
+      "en": "Coffee & Hot Drinks",
+      "icon": "☕",
+      "items": [
+        { "ar": "اسبريسو",            "en": "Espresso",           "price": 19 },
+        { "ar": "اسبانيش لاتيه",       "en": "Spanish Latte",      "price": 25, "tag": "best" },
+        { "ar": "لاتيه",              "en": "Latte",              "price": 25 },
+        { "ar": "كابتشينو",           "en": "Cappuccino",         "price": 25 },
+        { "ar": "فلات وايت",          "en": "Flat White",         "price": 25 },
+        { "ar": "كورتادو",            "en": "Cortado",            "price": 25 },
+        { "ar": "ميكاتو كراميل",       "en": "Caramel Macchiato",  "price": 25 },
+        { "ar": "بيستاشيو لاتيه",      "en": "Pistachio Latte",    "price": 25, "tag": "new" },
+        { "ar": "موكا / وايت موكا",    "en": "Mocha / White Mocha","price": 25 },
+        { "ar": "هوت شوكلت",          "en": "Hot Chocolate",      "price": 25 },
+        { "ar": "قهوة أمريكي",         "en": "American Coffee",    "price": 25 },
+        { "ar": "قهوة تركي",          "en": "Turkish Coffee",     "price": 21 },
+        { "ar": "دلة قهوة سعودي",      "en": "Saudi Coffee Pot",   "price": 25 },
+        { "ar": "شاي كرك / عدني",      "en": "Karak / Adeni Tea",  "price": 19 },
+        { "ar": "براد شاي مغربي",      "en": "Moroccan Tea Pot",   "price": 25 },
+        { "ar": "شاي (أحمر · أخضر · طائفي)", "en": "Tea (Red · Green · Taif)", "price": 12 },
+        { "ar": "زنجبيل مع ليمون",     "en": "Ginger with Lemon",  "price": 13 },
+        { "ar": "سحلب",               "en": "Sahlab",             "price": 22 }
+      ]
+    },
+
+    {
+      "id": "shisha",
+      "ar": "شيشة",
+      "en": "Shisha",
+      "icon": "💨",
+      "items": [
+        { "ar": "معسل عادي",          "en": "Classic Shisha",     "price": 55,
+          "descAr": "تفاحتين · عنب نعناع · ليمون نعناع · مستكة",
+          "descEn": "Double apple · Grape mint · Lemon mint · Mastic", "tag": "best" },
+        { "ar": "معسل مميز",           "en": "Premium Shisha",     "price": 70,
+          "descAr": "بلو بيري · باشن فروت · ميكس اللاونج",
+          "descEn": "Blueberry · Passion fruit · Lounge mix" },
+        { "ar": "رأس تفاح",           "en": "Apple Head",         "price": 80,
+          "descAr": "معسل داخل تفاحة طازجة", "descEn": "Served inside a fresh apple" },
+        { "ar": "رأس أناناس",          "en": "Pineapple Head",     "price": 90,
+          "descAr": "معسل داخل أناناس طازج", "descEn": "Served inside a fresh pineapple", "tag": "new" },
+        { "ar": "تغيير رأس",          "en": "Head Refill",        "price": 30 },
+        { "ar": "فحم إضافي",          "en": "Extra Coal",         "price": 10 }
+      ]
+    },
+
+    {
+      "id": "cold",
+      "ar": "عصيرات وبارد",
+      "en": "Juices & Cold",
+      "icon": "🥤",
+      "items": [
+        { "ar": "عصير طازج",          "en": "Fresh Juice",        "price": 26,
+          "descAr": "ليمون نعناع · برتقال · بطيخ · فراولة · مانجو · رمان · أفوكادو",
+          "descEn": "Lemon mint · Orange · Watermelon · Strawberry · Mango · Pomegranate · Avocado" },
+        { "ar": "كوكتيل فواكه",        "en": "Fruit Cocktail",     "price": 27,
+          "descAr": "كوبا · ليمون كيوي · فيتامين سي · بيناكولادا",
+          "descEn": "Cuba · Lemon kiwi · Vitamin C · Piña colada" },
+        { "ar": "ميلك شيك",           "en": "Milkshake",          "price": 30,
+          "descAr": "فراولة · أوريو · لوتس · شوكولاتة · فانيلا",
+          "descEn": "Strawberry · Oreo · Lotus · Chocolate · Vanilla", "tag": "best" },
+        { "ar": "موهيتو",             "en": "Mojito",             "price": 27,
+          "descAr": "ليمون نعناع · برتقال · رمان · توت أزرق · باشن فروت",
+          "descEn": "Lemon mint · Orange · Pomegranate · Blueberry · Passion fruit" },
+        { "ar": "آيس تي",             "en": "Ice Tea",            "price": 25,
+          "descAr": "خوخ · فراولة · ليمون · بطيخ", "descEn": "Peach · Strawberry · Lemon · Watermelon" },
+        { "ar": "آيس لاتيه",          "en": "Iced Latte",         "price": 25 },
+        { "ar": "ريد بول",            "en": "Red Bull",           "price": 28 },
+        { "ar": "مشروبات غازية",       "en": "Soft Drinks",        "price": 9 },
+        { "ar": "مياه",               "en": "Water",              "price": 5 }
+      ]
+    },
+
+    {
+      "id": "sweets",
+      "ar": "حلا",
+      "en": "Desserts",
+      "icon": "🍰",
+      "items": [
+        { "ar": "كنافة بالجبن",        "en": "Cheese Kunafa",      "price": 30,
+          "descAr": "تُقدّم ساخنة مع القطر والفستق", "descEn": "Served hot with syrup and pistachio", "tag": "best" },
+        { "ar": "سان سبستيان",         "en": "San Sebastián",      "price": 32,
+          "descAr": "تشيز كيك باسكي محروق", "descEn": "Burnt Basque cheesecake", "tag": "new" },
+        { "ar": "تشيز كيك لوتس",       "en": "Lotus Cheesecake",   "price": 30 },
+        { "ar": "براوني بالشوكولاتة",   "en": "Chocolate Brownie",  "price": 28,
+          "descAr": "مع آيس كريم فانيلا", "descEn": "With vanilla ice cream" },
+        { "ar": "كوكيز",              "en": "Cookies",            "price": 22 },
+        { "ar": "آيس كريم",           "en": "Ice Cream",          "price": 18 }
+      ]
+    }
+  ]
+}
